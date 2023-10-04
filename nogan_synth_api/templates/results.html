@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <link rel="icon" href="../static/images/nogan_synth.ico">        
+</head>
+<body>
+    <header>
+        <a href="/" name="homeIcon"><i class="fa fa-home" style="font-size:48px;color:#003366"></i></a>
+    </header>    
+    <h1>Generated Results</h1>
+
+    <!-- Display the success message if it exists -->
+    {% if success_message %}
+    <div class="alert alert-success">
+        {{ success_message | safe }}
+    </div>
+    {% endif %}
+
+    <!-- Display the error message if it exists -->
+    {% if error_message %}
+    <div class="alert alert-danger">
+        {{ error_message }}
+    </div>
+    {% endif %}
+    
+</body>
+</html>

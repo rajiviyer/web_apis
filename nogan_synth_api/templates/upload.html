@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NoGAN Data Synthesizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="icon" href="../static/images/nogan_synth.ico">
+    <script src = "../static/js/upload.js"></script>    
+</head>
+<body>
+    <h1>NoGAN Data Synthesizer</h1>
+    <form method="POST" action="/process" enctype="multipart/form-data">
+        <label name = "inputFile" for="file">Select a file to Upload</label><br>
+        <input type="file" name="file" accept=".csv, .txt, .xlsx" required><br><br>
+        <label name = "fileTypeLabel" for="file_type">File Type:</label>
+        <select name="file_type" onchange="hideTextInput(this.value);" required>
+            <option value="csv">CSV</option>
+            <option value="excel">Excel</option>
+            <option value="text">Text</option>      
+        </select>&nbsp;
+        <label name = "delimLabel" for="delimiter">Delimiter:</label>
+        <input type="text" name="delimiter" value="," required><br><br><br>
+        <input type="submit" name="uploadButton" value="Upload">
+    </form>
+</body>
+</html>
